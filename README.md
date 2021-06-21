@@ -15,4 +15,4 @@ List of possible option can be found [here](https://manpages.debian.org/testing/
 
 ## Tips and Tricks
 * To be able to write files, use option "--create"
-* For convinience, you could use it back to back with FTP container. For example, [this one](https://github.com/stilliard/docker-pure-ftpd). Just make sure you're using the same user and folder mappings. Note: to avoid possible "race conditions" don't define "--create" option (as by default) or mount a volume for tftp container as read-only 
+* For convenience, you could use it back to back with FTP container. For example, [this one](https://github.com/stilliard/docker-pure-ftpd). Just make sure you're using the same user and folder mappings. Note: to avoid possible "race conditions" don't define "--create" option (as by default) or mount a volume for tftp container as read-only 
