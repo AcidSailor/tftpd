@@ -1,0 +1,18 @@
+---
+version: '3'
+
+services:
+  tftpd:
+    image: ghcr.io/acidsailor/tftpd
+    container_name: tftpd
+    hostname: tftpd
+    environment:
+      TFTP_USERNAME: tftpduser
+      TFTP_DIRECTORY: /home/tftpduser
+    volumes:
+        - data:/home/tftpduser
+    ports:
+        - 69:69/udp
+    restart: always
+volumes: 
+    data: {}

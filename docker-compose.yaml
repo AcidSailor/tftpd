@@ -1,0 +1,12 @@
+---
+version: '3.4'
+x-tftpd: &default_tftpd
+  build: 
+    context: .
+  image: ghcr.io/acidsailor/tftpd:latest
+
+services:
+  tftpd_latest: *default_tftpd
+  tftpd_v1.0: 
+    << : *default_tftpd
+    image: ghcr.io/acidsailor/tftpd:v1.0
