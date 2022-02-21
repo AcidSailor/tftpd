@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian:bullseye-slim
 
 RUN apt-get update && \
     apt-get install tftpd-hpa -y && \
@@ -19,5 +19,3 @@ ENV TFTP_DIRECTORY="/srv/tftp"
 ENV TFTP_ADDRESS=":69"
 
 ENTRYPOINT [ "/tftpd/runner.sh" ]
-
-CMD [ "--secure" ]

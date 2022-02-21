@@ -8,9 +8,9 @@ services:
     ports:
       - "21:21"
       - "30000-30009:30000-30009"
-    volumes: 
-        - data:/home/ftpuser
-        - passwd:/etc/pure-ftpd/passwd
+    volumes:
+      - data:/home/ftpuser
+      - passwd:/etc/pure-ftpd/passwd
     environment:
       PUBLICHOST: "localhost"
       FTP_USER_NAME: &username ftpuser
@@ -18,19 +18,19 @@ services:
       FTP_USER_HOME: &directory /home/ftpuser
     restart: always
   tftpd:
-    image:  ghcr.io/acidsailor/tftpd
-    build:
-      context: .
+    image: ghcr.io/acidsailor/tftpd
     container_name: tftpd
     hostname: tftpd
     environment:
       TFTP_USERNAME: *username
       TFTP_DIRECTORY: *directory
     volumes:
-        - data:/home/username:ro
+      - data:/home/ftpuser:ro
     ports:
-        - 69:69/udp
+      - 69:69/udp
+    command:
+      - --secure
     restart: always
-volumes: 
-    data: {}
-    passwd: {}
+volumes:
+  data: {}
+  passwd: {}

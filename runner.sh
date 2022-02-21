@@ -12,7 +12,7 @@ fi
 # ENV 2 CFG
 echo "Generating Config..."
 echo "# /etc/default/tftpd-hpa
-                          
+
 TFTP_USERNAME=\""$TFTP_USERNAME"\"      
 TFTP_DIRECTORY=\""$TFTP_DIRECTORY"\"
 TFTP_ADDRESS=\""$TFTP_ADDRESS"\"
